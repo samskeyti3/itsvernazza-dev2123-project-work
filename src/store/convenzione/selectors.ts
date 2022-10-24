@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import ConvenzioneModel from "../../models/costi/ConvenzioneModel";
+import ConvenzioneModel from "../../models/convenzione/ConvenzioneModel";
 import ConvenzioneReducerType, { ConvenzioneState } from "./types";
 
 const convenzioneState = (state: ConvenzioneState): ConvenzioneReducerType => state.convenzione;

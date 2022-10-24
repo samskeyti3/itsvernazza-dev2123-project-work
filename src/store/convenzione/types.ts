@@ -1,4 +1,4 @@
-import ConvenzioneModel from "../../models/costi/ConvenzioneModel";
+import ConvenzioneModel from "../../models/convenzione/ConvenzioneModel";
 
 
 export default interface ConvenzioneReducerType {
