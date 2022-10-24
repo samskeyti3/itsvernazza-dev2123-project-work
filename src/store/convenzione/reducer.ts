@@ -9,6 +9,6 @@ const initialState: ConvenzioneReducerType = {
     }
 };
 
-const ConvenzioneReducer = createReducer(initialState, (builder) => { });
+const convenzioneReducer = createReducer(initialState, (builder) => { });
 
-export default ConvenzioneReducer;
+export default convenzioneReducer;
