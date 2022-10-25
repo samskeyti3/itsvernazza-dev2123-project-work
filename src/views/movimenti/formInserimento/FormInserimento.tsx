@@ -2,17 +2,23 @@ import React from "react";
 import { Button, Card, Col, Container, FloatingLabel, Form, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import RouteEnum from "../../../constants/RouteEnum";
-import { useAppDispatch } from "../../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { inserimentoBonifico } from "../../../store/movimento/actions";
+import { elencoMovimenti } from "../../../store/movimento/selectors";
 
 const FormInserimento = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
+    const movimenti = useAppSelector(elencoMovimenti);
 
     const formSubmit = (e?: React.FormEvent<HTMLFormElement>) => {
         e?.preventDefault();
         //TODO
         //dispatch(userLogin(new UserLoginViewModel()));
-        navigate(RouteEnum.Movimenti);
+        dispatch(inserimentoBonifico);
+
+        console.log(movimenti);
+        navigate(RouteEnum.InserimentoBonifico);
     };
 
 
@@ -45,6 +51,22 @@ const FormInserimento = () => {
                                                 className="mb-3"
                                             >
                                                 <Form.Control type="text" placeholder="IBAN Beneficiario" />
+                                            </FloatingLabel>
+
+                                            <FloatingLabel
+                                                controlId="causale"
+                                                label="Causale"
+                                                className="mb-3"
+                                            >
+                                                <Form.Control type="text" placeholder="Causale" />
+                                            </FloatingLabel>
+
+                                            <FloatingLabel
+                                                controlId="Importo"
+                                                label="Importo"
+                                                className="mb-3"
+                                            >
+                                                <Form.Control type="number" placeholder="Importo" />
                                             </FloatingLabel>
 
                                             <Row>

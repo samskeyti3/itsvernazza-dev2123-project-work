@@ -5,7 +5,18 @@ import { inserimentoBonifico } from "./actions";
 import { MovimentiReducerType } from "./types";
 
 const initialState: MovimentiReducerType = {
-    movimenti: []
+    movimenti: [
+        {
+            idMovimento: 1,
+            beneficiarioDenominazione: "tommaso",
+            beneficiarioIban: "IT88N0300203280253948841999",
+            categoria: CategoriaMovimentoEnum.Bonifico,
+            data: new Date().getTime(),
+            importo: 200,
+            ordinanteDenominazione: "marco",
+            ordinanteIban: "ccccc",
+        }
+    ]
 };
 
 export const movimentoReducer = createReducer(initialState, (builder) => {

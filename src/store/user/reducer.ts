@@ -19,7 +19,13 @@ const initialState: UserReducerType = {
             iban: "IT30A0300203280117363366565"
         }
     ],
-    logged: undefined,
+    logged: {
+        username: "mario.rossi@test.it",
+        password: "123456",
+        name: "Mario",
+        surname: "Rossi",
+        iban: "IT88N0300203280253948841999"
+    },
 };
 
 export const userReducer = createReducer(initialState, (builder) => {
